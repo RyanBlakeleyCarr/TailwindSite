@@ -35,34 +35,18 @@ function FadeIn({ children, delay = 0 }) {
   );
 }
 
-function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handler, { passive: true });
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
-  return (
-    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, backgroundColor: scrolled ? "rgba(255,255,255,0.97)" : "transparent", backdropFilter: scrolled ? "blur(12px)" : "none", transition: "all 0.3s ease", borderBottom: scrolled ? `1px solid ${BORDER}` : "1px solid transparent" }}>
-      <div style={{ maxWidth: 1120, margin: "0 auto", padding: "16px 24px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={NAVY} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20L12 4l10 16H2z" /><line x1="12" y1="4" x2="12" y2="20" /><line x1="7" y1="12" x2="12" y2="12" /></svg>
-          <span style={{ fontFamily: "'Merriweather', Georgia, serif", fontWeight: 400, fontStyle: "italic", fontSize: 18, color: NAVY, letterSpacing: "-0.02em" }}>Tailwind</span>
-        </div>
-        <a href="#book" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "10px 22px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }}
-          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER}
-          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}
-        >Book a call</a>
-      </div>
-    </nav>
-  );
-}
 
 function Hero() {
   return (
     <section className="hero-section" style={{ backgroundColor: WHITE, color: NAVY, minHeight: "100vh", display: "flex", alignItems: "center" }}>
-      <div style={{ maxWidth: 1120, margin: "0 auto", padding: "140px 24px 80px", textAlign: "center" }}>
-        <FadeIn><h1 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(40px, 6vw, 72px)", fontWeight: 400, lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 800, marginBottom: 28, color: NAVY, marginLeft: "auto", marginRight: "auto" }}>We build newsletters that turn <span style={{ fontWeight: 700 }}>your expertise</span> into <span style={{ fontWeight: 700, fontStyle: "italic" }}>reliable revenue.</span></h1></FadeIn>
+      <div style={{ maxWidth: 1120, margin: "0 auto", padding: "100px 24px 80px", textAlign: "center" }}>
+        <FadeIn>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, justifyContent: "center", marginBottom: 32 }}>
+            <img src="/TailwindShip.png" alt="Tailwind" style={{ width: 24, height: 24, objectFit: "contain" }} />
+            <span style={{ fontFamily: "'Merriweather', Georgia, serif", fontWeight: 400, fontStyle: "italic", fontSize: 22, color: NAVY, letterSpacing: "-0.02em" }}>Tailwind</span>
+          </div>
+        </FadeIn>
+        <FadeIn delay={0.05}><h1 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(40px, 6vw, 72px)", fontWeight: 400, lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 800, marginBottom: 28, color: NAVY, marginLeft: "auto", marginRight: "auto" }}>We build newsletters that turn <span style={{ fontWeight: 700 }}>your expertise</span> into <span style={{ fontWeight: 700, fontStyle: "italic" }}>reliable revenue.</span></h1></FadeIn>
         <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, color: GRAY_TEXT, maxWidth: 600, marginBottom: 40, marginLeft: "auto", marginRight: "auto" }}>Tailwind Studio is your trusted partner in creating email newsletters that capture your expertise, provide value to your audience, grow organically, and convert readers to your products and services.</p></FadeIn>
         <FadeIn delay={0.2}><a href="#book" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>Let's build your newsletter 📬</a></FadeIn>
         <FadeIn delay={0.35}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, lineHeight: 1.7, color: LIGHT_GRAY, marginTop: 32, maxWidth: 540, marginLeft: "auto", marginRight: "auto" }}>30+ publications produced, 1.5M+ subscribers earned, 8-figures in client revenue generated.</p></FadeIn>
@@ -484,9 +468,9 @@ function ProofSection() {
 
         <FadeIn delay={0.08}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, justifyContent: "center", marginBottom: 48 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={NAVY} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20L12 4l10 16H2z" /><line x1="12" y1="4" x2="12" y2="20" /><line x1="7" y1="12" x2="12" y2="12" /></svg>
-              <span style={{ fontFamily: "'Merriweather', Georgia, serif", fontWeight: 400, fontStyle: "italic", fontSize: 15, color: NAVY, letterSpacing: "-0.02em" }}>Tailwind</span>
+            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <img src="/TailwindShip.png" alt="Tailwind" style={{ width: 24, height: 24, objectFit: "contain" }} />
+              <span style={{ fontFamily: "'Merriweather', Georgia, serif", fontWeight: 400, fontStyle: "italic", fontSize: 22, color: NAVY, letterSpacing: "-0.02em" }}>Tailwind</span>
             </div>
             <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: LIGHT_GRAY, fontWeight: 500 }}>&times;</span>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -621,7 +605,7 @@ export default function TailwindStudio() {
           .hero-section{min-height:auto!important;padding-top:100px!important;padding-bottom:48px!important}
         }
       `}</style>
-      <Nav /><Hero /><WhySection /><WhatWeDo /><ProofSection /><WallOfLove /><FooterCTA />
+      <Hero /><WhySection /><WhatWeDo /><ProofSection /><WallOfLove /><FooterCTA />
     </div>
   );
 }
