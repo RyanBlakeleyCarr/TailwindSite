@@ -39,7 +39,7 @@ function FadeIn({ children, delay = 0 }) {
 function Hero() {
   return (
     <section className="hero-section" style={{ backgroundColor: WHITE, color: NAVY, minHeight: "100vh", display: "flex", alignItems: "center" }}>
-      <div style={{ maxWidth: 1120, margin: "0 auto", padding: "100px 24px 80px", textAlign: "center" }}>
+      <div className="hero-inner" style={{ maxWidth: 1120, margin: "0 auto", padding: "100px 24px 80px", textAlign: "center" }}>
         <FadeIn>
           <div style={{ display: "flex", alignItems: "center", gap: 6, justifyContent: "center", marginBottom: 32 }}>
             <img src="/TailwindShip.png" alt="Tailwind" style={{ width: 24, height: 24, objectFit: "contain" }} />
@@ -611,7 +611,8 @@ export default function TailwindStudio() {
           .proof-stats{grid-template-columns:1fr!important;gap:24px!important}
           .about-grid{grid-template-columns:1fr!important;gap:32px!important}
           .about-photo{aspect-ratio:3/2!important}
-          .hero-section{min-height:auto!important;padding-top:100px!important;padding-bottom:48px!important}
+          .hero-section{min-height:auto!important;padding-top:0px!important;padding-bottom:48px!important}
+          .hero-inner{padding-top:56px!important;padding-bottom:48px!important}
         }
       `}</style>
       <Hero /><WhySection /><WhatWeDo /><ProofSection /><WallOfLove /><FooterCTA />
