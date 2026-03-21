@@ -60,7 +60,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section style={{ backgroundColor: WHITE, color: NAVY, minHeight: "100vh", display: "flex", alignItems: "center" }}>
+    <section className="hero-section" style={{ backgroundColor: WHITE, color: NAVY, minHeight: "100vh", display: "flex", alignItems: "center" }}>
       <div style={{ maxWidth: 1120, margin: "0 auto", padding: "140px 24px 80px" }}>
         <FadeIn><h1 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(40px, 6vw, 72px)", fontWeight: 400, lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 800, marginBottom: 28, color: NAVY }}>We build newsletter funnels that turn your expertise into reliable revenue.</h1></FadeIn>
         <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, color: GRAY_TEXT, maxWidth: 600, marginBottom: 40 }}>Tailwind Studio is your trusted partner in creating email newsletters that capture your expertise, provide value to your audience, grow organically, and convert readers to your products and services.</p></FadeIn>
@@ -122,7 +122,7 @@ function WhySection() {
   ];
 
   return (
-    <section style={{ backgroundColor: WHITE, color: NAVY, padding: "48px 24px 120px", borderTop: `1px solid ${BORDER}` }}>
+    <section className="mobile-section-why" style={{ backgroundColor: WHITE, color: NAVY, padding: "48px 24px 120px", borderTop: `1px solid ${BORDER}` }}>
       <style>{anim}</style>
       <style>{`
         @media(max-width:768px){
@@ -384,7 +384,7 @@ function WhatWeDo() {
       icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={LIGHT_GRAY} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg> },
   ];
   return (
-    <section style={{ backgroundColor: WHITE, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
+    <section className="mobile-section" style={{ backgroundColor: WHITE, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}>What we do</p></FadeIn>
         <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, color: NAVY, letterSpacing: "-0.02em", maxWidth: 600, margin: "0 auto 56px", textAlign: "center" }}>We handle the entire newsletter funnel so you don't have to.</h2></FadeIn>
@@ -445,11 +445,11 @@ function ProofSection() {
     { big: "8 figures", label: "in revenue from the newsletter" },
   ];
   return (
-    <section style={{ backgroundColor: WHITE, color: NAVY, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
+    <section className="mobile-section" style={{ backgroundColor: WHITE, color: NAVY, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}>Case study</p></FadeIn>
         <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 680, margin: "0 auto 48px", textAlign: "center", color: NAVY }}>From 10K subscribers to 8 figures in revenue.</h2></FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "3fr 2fr", gap: 56, alignItems: "start" }}>
+        <div className="proof-grid" style={{ display: "grid", gridTemplateColumns: "3fr 2fr", gap: 56, alignItems: "start" }}>
           <div>
             <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 20 }}>Ben Kelly runs a coaching business helping people acquire small and medium businesses. When we started working together, his newsletter went out twice a week to a list of 10,000.</p></FadeIn>
             <FadeIn delay={0.15}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 20 }}>We built the full funnel: content production, onboarding surveys to capture investor qualification data, list segmentation, and strategic CTAs in every edition. We also managed Meta ad campaigns to fill the top of the funnel with the right people.</p></FadeIn>
@@ -474,16 +474,16 @@ function ProofSection() {
 
 function AboutSection() {
   return (
-    <section style={{ backgroundColor: WHITE, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
+    <section className="mobile-section" style={{ backgroundColor: WHITE, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 56, alignItems: "center" }}>
+        <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 56, alignItems: "center" }}>
           <div>
             <FadeIn><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 400, color: NAVY, letterSpacing: "-0.02em", marginBottom: 24, lineHeight: 1.15 }}>Built by a newsletter operator, not a marketing agency.</h2></FadeIn>
             <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 20 }}>Tailwind is run by Ryan, who led newsletter growth at The Hustle before and after its acquisition by HubSpot. He's spent his career building, growing, and monetizing newsletters. Tailwind is how he does that for other businesses.</p></FadeIn>
             <FadeIn delay={0.15}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, margin: 0 }}>This isn't a big agency with layers of account managers. It's a small, hands-on team that treats your newsletter like their own.</p></FadeIn>
           </div>
           <FadeIn delay={0.2}>
-            <div style={{ backgroundColor: SUBTLE_BG, borderRadius: 12, aspectRatio: "4/5", display: "flex", alignItems: "center", justifyContent: "center", border: `1px solid ${BORDER}` }}>
+            <div className="about-photo" style={{ backgroundColor: SUBTLE_BG, borderRadius: 12, aspectRatio: "4/5", display: "flex", alignItems: "center", justifyContent: "center", border: `1px solid ${BORDER}` }}>
               <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: LIGHT_GRAY, textAlign: "center", padding: 24 }}>
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke={BORDER} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ display: "block", margin: "0 auto 12px" }}><circle cx="12" cy="8" r="4" /><path d="M20 21a8 8 0 0 0-16 0" /></svg>
                 Headshot goes here
@@ -525,7 +525,7 @@ function SenjaCarousel() {
 
 function FooterCTA() {
   return (
-    <section id="book" style={{ backgroundColor: NAVY, color: WHITE, padding: "100px 24px", textAlign: "center" }}>
+    <section id="book" className="mobile-section" style={{ backgroundColor: NAVY, color: WHITE, padding: "100px 24px", textAlign: "center" }}>
       <div style={{ maxWidth: 640, margin: "0 auto" }}>
         <FadeIn><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", marginBottom: 20, color: WHITE }}>Ready to turn your content into a revenue channel?</h2></FadeIn>
         <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.6)", marginBottom: 36 }}>Book a call and we'll walk through what a newsletter funnel looks like for your business.</p></FadeIn>
@@ -542,7 +542,19 @@ export default function TailwindStudio() {
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-      <style>{`*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}::selection{background:${NAVY};color:${WHITE}}`}</style>
+      <style>{`
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        ::selection{background:${NAVY};color:${WHITE}}
+        @media(max-width:768px){
+          .mobile-section{padding-top:56px!important;padding-bottom:56px!important}
+          .mobile-section-why{padding-top:36px!important;padding-bottom:56px!important}
+          .proof-grid{grid-template-columns:1fr!important;gap:32px!important}
+          .about-grid{grid-template-columns:1fr!important;gap:32px!important}
+          .about-photo{aspect-ratio:3/2!important}
+          .hero-section{min-height:auto!important;padding-top:100px!important;padding-bottom:48px!important}
+        }
+      `}</style>
       <Nav /><Hero /><SenjaCarousel /><WhySection /><WhatWeDo /><ProofSection /><AboutSection /><FooterCTA />
     </div>
   );
