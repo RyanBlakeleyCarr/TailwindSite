@@ -68,6 +68,14 @@ function WhySection() {
   const [p3Ref, p3] = useInView(0.3);
   const [p4Ref, p4] = useInView(0.3);
   const [p5Ref, p5] = useInView(0.3);
+  const [funnelRef, funnelVisible] = useInView(0.1);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener("resize", check, { passive: true });
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const platforms = [
     { name: "LinkedIn", color: "#0A66C2" },
@@ -79,9 +87,10 @@ function WhySection() {
   const offers = [{ name: "Coaching" }, { name: "Products" }, { name: "Services" }, { name: "Courses" }, { name: "Community" }];
   const tags = ["Demonstrate expertise", "Nurture & educate", "Build trust", "Provide value"];
 
-  const collected = p2;
-  const showHub = p2;
-  const showOffers = p4;
+  const mobileTriggered = isMobile && funnelVisible;
+  const collected = p2 || mobileTriggered;
+  const showHub = p2 || mobileTriggered;
+  const showOffers = p4 || mobileTriggered;
 
   const anim = `
     @keyframes f0{0%,100%{transform:translate(8px,-14px) rotate(-2.5deg)}50%{transform:translate(-6px,8px) rotate(1.5deg)}}
@@ -130,7 +139,7 @@ function WhySection() {
         <div className="funnel-grid" style={{ display: "grid", gridTemplateColumns: "5fr 6fr", gap: 56, alignItems: "start" }}>
 
           {/* LEFT: sticky funnel */}
-          <div className="funnel-sticky" style={{ position: "sticky", top: 100, alignSelf: "start", display: "flex", justifyContent: "center" }}>
+          <div ref={funnelRef} className="funnel-sticky" style={{ position: "sticky", top: 100, alignSelf: "start", display: "flex", justifyContent: "center" }}>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: 340 }}>
 
               {/* Platforms - always absolute positioned, animate between scatter and collected */}
@@ -160,9 +169,9 @@ function WhySection() {
                           position: "absolute",
                           top: target.top,
                           left: target.left,
-                          animation: !collected && p1 ? `f${i} ${4 + i * 0.5}s ease-in-out infinite` : "none",
+                          animation: !collected && (p1 || mobileTriggered) ? `f${i} ${4 + i * 0.5}s ease-in-out infinite` : "none",
                           transition: `top 1.4s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s, left 1.4s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s, opacity 0.6s ease`,
-                          opacity: p1 ? 1 : 0,
+                          opacity: (p1 || mobileTriggered) ? 1 : 0,
                           whiteSpace: "nowrap",
                         }}>
                           <div style={{ width: 7, height: 7, borderRadius: "50%", backgroundColor: p.color, flexShrink: 0 }} />
