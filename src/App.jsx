@@ -122,7 +122,7 @@ function WhySection() {
   ];
 
   return (
-    <section style={{ backgroundColor: WHITE, color: NAVY, padding: "80px 24px 120px" }}>
+    <section style={{ backgroundColor: WHITE, color: NAVY, padding: "48px 24px 120px", borderTop: `1px solid ${BORDER}` }}>
       <style>{anim}</style>
       <style>{`
         @media(max-width:768px){
@@ -131,7 +131,7 @@ function WhySection() {
         }
       `}</style>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 72 }}>
+        <div style={{ textAlign: "center", marginBottom: 24 }}>
           <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20 }}>Why newsletters</p></FadeIn>
           <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 700, margin: "0 auto", color: NAVY }}>Your newsletter is the center of your sales funnel.</h2></FadeIn>
         </div>
@@ -508,7 +508,7 @@ function SenjaCarousel() {
     return () => { try { document.body.removeChild(script); } catch(e) {} };
   }, []);
   return (
-    <section style={{ backgroundColor: WHITE, padding: "0 24px 60px" }}>
+    <section style={{ backgroundColor: WHITE, padding: "0 24px 0", maxHeight: 380, overflow: "hidden" }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         <div
           ref={containerRef}
