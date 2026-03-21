@@ -118,7 +118,7 @@ function WhySection() {
       <style>{`
         @media(max-width:768px){
           .funnel-grid{grid-template-columns:1fr!important}
-          .funnel-sticky{position:relative!important;top:auto!important;margin-bottom:48px}
+          .funnel-sticky{position:relative!important;top:auto!important;margin-bottom:48px;overflow:hidden}
         }
       `}</style>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
@@ -586,13 +586,13 @@ function FooterCTA() {
 
 export default function TailwindStudio() {
   return (
-    <div style={{ margin: 0, padding: 0, backgroundColor: WHITE }}>
+    <div style={{ margin: 0, padding: 0, backgroundColor: WHITE, overflowX: "hidden" }}>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
       <style>{`
         *{margin:0;padding:0;box-sizing:border-box}
-        html{scroll-behavior:smooth}
+        html,body{scroll-behavior:smooth;overflow-x:hidden;width:100%}
         ::selection{background:${NAVY};color:${WHITE}}
         @keyframes heroArrow{0%,100%{transform:translateY(0);opacity:0.4}50%{transform:translateY(8px);opacity:1}}
         @media(max-width:768px){
