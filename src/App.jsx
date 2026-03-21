@@ -122,7 +122,7 @@ function WhySection() {
   ];
 
   return (
-    <section className="mobile-section-why" style={{ backgroundColor: WHITE, color: NAVY, padding: "48px 24px 120px", borderTop: `1px solid ${BORDER}` }}>
+    <section className="mobile-section-why" style={{ backgroundColor: WHITE, color: NAVY, padding: "72px 24px 120px", borderTop: `1px solid ${BORDER}` }}>
       <style>{anim}</style>
       <style>{`
         @media(max-width:768px){
@@ -131,7 +131,7 @@ function WhySection() {
         }
       `}</style>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 24 }}>
+        <div style={{ textAlign: "center", marginBottom: 56 }}>
           <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20 }}>Why newsletters</p></FadeIn>
           <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 700, margin: "0 auto", color: NAVY }}>Your newsletter is the center of your sales funnel.</h2></FadeIn>
         </div>
@@ -438,35 +438,90 @@ function WhatWeDo() {
   );
 }
 
+function Quote({ children, delay = 0 }) {
+  return (
+    <FadeIn delay={delay}>
+      <div style={{
+        backgroundColor: SUBTLE_BG, borderRadius: 12, padding: "24px 28px",
+        borderLeft: `3px solid ${NAVY}`, marginBottom: 24,
+        position: "relative",
+      }}>
+        <svg width="20" height="16" viewBox="0 0 24 20" fill="none" style={{ position: "absolute", top: 20, left: 24, opacity: 0.08 }}>
+          <path d="M0 20V12C0 5.4 4.2 1.4 10 0l1.4 2.8C7.6 4 5.8 6.6 5.4 10H10v10H0zm14 0V12c0-6.6 4.2-10.6 10-12l1.4 2.8C21.6 4 19.8 6.6 19.4 10H24v10H14z" fill={NAVY} />
+        </svg>
+        <p style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: 15, lineHeight: 1.7, color: NAVY, fontStyle: "italic", position: "relative", zIndex: 1 }}>{children}</p>
+      </div>
+    </FadeIn>
+  );
+}
+
 function ProofSection() {
   const stats = [
-    { big: "10K \u2192 100K", label: "subscribers" },
-    { big: "2x \u2192 5x/week", label: "due to funnel success" },
-    { big: "8 figures", label: "in revenue from the newsletter" },
+    { big: "1x \u2192 5x/week", label: "send frequency" },
+    { big: "10X", label: "revenue from newsletter" },
+    { big: "\u201CTotally hands off\u201D", label: "Ben Kelly, Acquisition Ace", isQuote: true },
   ];
   return (
     <section className="mobile-section" style={{ backgroundColor: WHITE, color: NAVY, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}>Case study</p></FadeIn>
-        <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 680, margin: "0 auto 48px", textAlign: "center", color: NAVY }}>From 10K subscribers to 8 figures in revenue.</h2></FadeIn>
-        <div className="proof-grid" style={{ display: "grid", gridTemplateColumns: "3fr 2fr", gap: 56, alignItems: "start" }}>
-          <div>
-            <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 20 }}>Ben Kelly runs a coaching business helping people acquire small and medium businesses. When we started working together, his newsletter went out twice a week to a list of 10,000.</p></FadeIn>
-            <FadeIn delay={0.15}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 20 }}>We built the full funnel: content production, onboarding surveys to capture investor qualification data, list segmentation, and strategic CTAs in every edition. We also managed Meta ad campaigns to fill the top of the funnel with the right people.</p></FadeIn>
-            <FadeIn delay={0.2}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT }}>Today, the newsletter goes out five times a week to over 100,000 subscribers. From the top 10% most qualified segment alone, Ben has sourced eight figures in co-investment volume.</p></FadeIn>
+        <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}><span style={{ background: "rgba(255,240,0,0.45)", padding: "3px 10px", borderRadius: 3, transform: "rotate(-0.5deg)", display: "inline-block" }}>Case study</span></p></FadeIn>
+        <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 680, margin: "0 auto 32px", textAlign: "center", color: NAVY }}>From inconsistent sends to 10X newsletter revenue.</h2></FadeIn>
+
+        <FadeIn delay={0.07}>
+          <div style={{ maxWidth: 720, margin: "0 auto 36px", borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 24px rgba(15,23,41,0.10)" }}>
+            <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+              <iframe src="https://player.vimeo.com/video/1175668468?h=a5489636fa&badge=0&autopause=0&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Tailwind x Ben Kelly" />
+            </div>
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-            {stats.map((stat, i) => (
-              <FadeIn key={i} delay={0.15 + i * 0.1}>
-                <div style={{ borderLeft: `3px solid ${NAVY}`, paddingLeft: 24 }}>
-                  <div style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(28px, 3.5vw, 36px)", fontWeight: 400, color: NAVY, letterSpacing: "-0.02em", lineHeight: 1.2 }}>{stat.big}</div>
-                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: LIGHT_GRAY, marginTop: 4 }}>{stat.label}</div>
-                </div>
-              </FadeIn>
-            ))}
+        </FadeIn>
+
+        <FadeIn delay={0.08}>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, justifyContent: "center", marginBottom: 48 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={NAVY} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20L12 4l10 16H2z" /><line x1="12" y1="4" x2="12" y2="20" /><line x1="7" y1="12" x2="12" y2="12" /></svg>
+              <span style={{ fontFamily: "'Merriweather', Georgia, serif", fontWeight: 400, fontStyle: "italic", fontSize: 15, color: NAVY, letterSpacing: "-0.02em" }}>Tailwind</span>
+            </div>
+            <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: LIGHT_GRAY, fontWeight: 500 }}>&times;</span>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <img src="https://cdn.prod.website-files.com/674cb9344353766e35f283dd/696e8d9aeeb4618a31068a43_Untitled_design_-_2025-12-10T165414.876.png" alt="Ben Kelly" style={{ width: 36, height: 36, borderRadius: "50%", objectFit: "cover", border: `1.5px solid ${BORDER}` }} />
+              <div>
+                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: NAVY, lineHeight: 1.2 }}>Ben Kelly</div>
+                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: LIGHT_GRAY, lineHeight: 1.2 }}>Founder, Acquisition Ace</div>
+              </div>
+            </div>
           </div>
+        </FadeIn>
+
+        <div style={{ maxWidth: 720, margin: "0 auto" }}>
+          <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 24 }}>Ben Kelly runs Acquisition Ace, a community helping people acquire businesses. He'd built his newsletter to a few thousand subscribers on his own, but it kept falling to the back burner. Then something clicked.</p></FadeIn>
+
+          <Quote delay={0.15}>"I realized that the subscribers I had to my newsletter were some of the best leads that I had, and I realized I need to focus on this because I think this can become one of my biggest channels."</Quote>
+
+          <FadeIn delay={0.2}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 24 }}>We took over the full newsletter operation: writing in Ben's voice by studying his existing content, repurposing his YouTube and Instagram into newsletter editions, and scaling send frequency from once a week to five days a week.</p></FadeIn>
+
+          <Quote delay={0.25}>"Very rarely do I have to make any kind of major changes. Most of the time it's just like changing one word. And then there's a lot of times where I don't do anything other than saying 'that looks great.'"</Quote>
+
+          <FadeIn delay={0.3}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 24 }}>Today, the newsletter drives 10X the revenue it did before.</p></FadeIn>
+
+          <Quote delay={0.35}>"It's 10X the amount of revenue that we were receiving from the newsletter. The same size audience, but 10X the revenue. And that's all because of the frequency, the quality, the design, everything that your team runs on the newsletter."</Quote>
+
+          <FadeIn delay={0.4}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 24 }}>And for Ben, it's not just about revenue, it's about building something he actually owns.</p></FadeIn>
+
+          <Quote delay={0.45}>"You can get banned from Instagram, you get banned from YouTube. Guess what? If you have people's emails and they opted in, you own that."</Quote>
         </div>
-        <FadeIn delay={0.4}><div style={{ marginTop: 56, textAlign: "center" }}><a href="#book" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>Build your funnel</a></div></FadeIn>
+
+        <div className="proof-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32, marginTop: 56 }}>
+          {stats.map((stat, i) => (
+            <FadeIn key={i} delay={0.5 + i * 0.08}>
+              <div style={{ borderLeft: `3px solid ${NAVY}`, paddingLeft: 24 }}>
+                <div style={{ fontFamily: stat.isQuote ? "'Merriweather', Georgia, serif" : "'Merriweather', Georgia, serif", fontSize: stat.isQuote ? "clamp(18px, 2.5vw, 22px)" : "clamp(28px, 3.5vw, 36px)", fontWeight: 400, color: NAVY, letterSpacing: "-0.02em", lineHeight: 1.2, fontStyle: stat.isQuote ? "italic" : "normal" }}>{stat.big}</div>
+                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: LIGHT_GRAY, marginTop: 4 }}>{stat.label}</div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+
+        <FadeIn delay={0.6}><div style={{ marginTop: 56, textAlign: "center" }}><a href="#book" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>Build your funnel</a></div></FadeIn>
       </div>
     </section>
   );
@@ -508,7 +563,7 @@ function SenjaCarousel() {
     return () => { try { document.body.removeChild(script); } catch(e) {} };
   }, []);
   return (
-    <section style={{ backgroundColor: WHITE, padding: "0 24px 0", maxHeight: 380, overflow: "hidden" }}>
+    <section style={{ backgroundColor: WHITE, padding: "0 24px 32px", maxHeight: 412, overflow: "hidden" }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         <div
           ref={containerRef}
@@ -550,6 +605,7 @@ export default function TailwindStudio() {
           .mobile-section{padding-top:56px!important;padding-bottom:56px!important}
           .mobile-section-why{padding-top:36px!important;padding-bottom:56px!important}
           .proof-grid{grid-template-columns:1fr!important;gap:32px!important}
+          .proof-stats{grid-template-columns:1fr!important;gap:24px!important}
           .about-grid{grid-template-columns:1fr!important;gap:32px!important}
           .about-photo{aspect-ratio:3/2!important}
           .hero-section{min-height:auto!important;padding-top:100px!important;padding-bottom:48px!important}
