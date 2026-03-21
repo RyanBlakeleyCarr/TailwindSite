@@ -61,11 +61,18 @@ function Nav() {
 function Hero() {
   return (
     <section className="hero-section" style={{ backgroundColor: WHITE, color: NAVY, minHeight: "100vh", display: "flex", alignItems: "center" }}>
-      <div style={{ maxWidth: 1120, margin: "0 auto", padding: "140px 24px 80px" }}>
-        <FadeIn><h1 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(40px, 6vw, 72px)", fontWeight: 400, lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 800, marginBottom: 28, color: NAVY }}>We build newsletter funnels that turn your expertise into reliable revenue.</h1></FadeIn>
-        <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, color: GRAY_TEXT, maxWidth: 600, marginBottom: 40 }}>Tailwind Studio is your trusted partner in creating email newsletters that capture your expertise, provide value to your audience, grow organically, and convert readers to your products and services.</p></FadeIn>
-        <FadeIn delay={0.2}><a href="#book" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>Start building your funnel</a></FadeIn>
-        <FadeIn delay={0.35}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, lineHeight: 1.7, color: LIGHT_GRAY, marginTop: 32, maxWidth: 540 }}>From the team that led newsletter growth at The Hustle (acquired by HubSpot). 500K+ subscribers driven. 8 figures in client revenue generated.</p></FadeIn>
+      <div style={{ maxWidth: 1120, margin: "0 auto", padding: "140px 24px 80px", textAlign: "center" }}>
+        <FadeIn><h1 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(40px, 6vw, 72px)", fontWeight: 400, lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 800, marginBottom: 28, color: NAVY, marginLeft: "auto", marginRight: "auto" }}>We build newsletters that turn <span style={{ fontWeight: 700 }}>your expertise</span> into <span style={{ fontWeight: 700, fontStyle: "italic" }}>reliable revenue.</span></h1></FadeIn>
+        <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, color: GRAY_TEXT, maxWidth: 600, marginBottom: 40, marginLeft: "auto", marginRight: "auto" }}>Tailwind Studio is your trusted partner in creating email newsletters that capture your expertise, provide value to your audience, grow organically, and convert readers to your products and services.</p></FadeIn>
+        <FadeIn delay={0.2}><a href="#book" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>Let's build your newsletter 📬</a></FadeIn>
+        <FadeIn delay={0.35}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, lineHeight: 1.7, color: LIGHT_GRAY, marginTop: 32, maxWidth: 540, marginLeft: "auto", marginRight: "auto" }}>30+ publications produced, 1.5M+ subscribers earned, 8-figures in client revenue generated.</p></FadeIn>
+        <FadeIn delay={0.5}>
+          <div style={{ marginTop: 32 }}>
+            <svg width="20" height="28" viewBox="0 0 20 28" fill="none" style={{ display: "block", margin: "0 auto", animation: "heroArrow 2s ease-in-out infinite" }}>
+              <path d="M10 0V24M10 24L2 16M10 24L18 16" stroke={LIGHT_GRAY} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -86,7 +93,7 @@ function WhySection() {
     { name: "Instagram", color: "#E1306C" },
   ];
   const offers = [{ name: "Coaching" }, { name: "Products" }, { name: "Services" }, { name: "Courses" }, { name: "Community" }];
-  const tags = ["Nurture", "Build trust", "Provide value", "Expertise"];
+  const tags = ["Demonstrate expertise", "Nurture & educate", "Build trust", "Provide value"];
 
   const collected = p2;
   const showHub = p2;
@@ -133,7 +140,7 @@ function WhySection() {
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 56 }}>
           <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20 }}>Why newsletters</p></FadeIn>
-          <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 700, margin: "0 auto", color: NAVY }}>Your newsletter is the center of your sales funnel.</h2></FadeIn>
+          <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 700, margin: "0 auto", color: NAVY }}>Your newsletter is the <span style={{ fontWeight: 700 }}>central hub</span> of your sales funnel.</h2></FadeIn>
         </div>
 
         <div className="funnel-grid" style={{ display: "grid", gridTemplateColumns: "5fr 6fr", gap: 56, alignItems: "start" }}>
@@ -387,7 +394,7 @@ function WhatWeDo() {
     <section className="mobile-section" style={{ backgroundColor: WHITE, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}>What we do</p></FadeIn>
-        <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, color: NAVY, letterSpacing: "-0.02em", maxWidth: 600, margin: "0 auto 56px", textAlign: "center" }}>We handle the entire newsletter funnel so you don't have to.</h2></FadeIn>
+        <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, color: NAVY, letterSpacing: "-0.02em", maxWidth: 600, margin: "0 auto 56px", textAlign: "center" }}>We handle <span style={{ fontWeight: 700 }}>the entire newsletter funnel</span> so you don't have to.</h2></FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28 }}>
           {cards.map((card, i) => (
             <FadeIn key={i} delay={0.1 + i * 0.08}>
@@ -465,7 +472,7 @@ function ProofSection() {
     <section className="mobile-section" style={{ backgroundColor: WHITE, color: NAVY, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}><span style={{ background: "rgba(255,240,0,0.45)", padding: "3px 10px", borderRadius: 3, transform: "rotate(-0.5deg)", display: "inline-block" }}>Case study</span></p></FadeIn>
-        <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 680, margin: "0 auto 32px", textAlign: "center", color: NAVY }}>From inconsistent sends to 10X newsletter revenue.</h2></FadeIn>
+        <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 680, margin: "0 auto 32px", textAlign: "center", color: NAVY }}>From inconsistent sends to <span style={{ fontWeight: 700 }}>10X newsletter revenue.</span></h2></FadeIn>
 
         <FadeIn delay={0.07}>
           <div style={{ maxWidth: 720, margin: "0 auto 36px", borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 24px rgba(15,23,41,0.10)" }}>
@@ -551,24 +558,26 @@ function AboutSection() {
   );
 }
 
-function SenjaCarousel() {
+function WallOfLove() {
   const containerRef = useRef(null);
   useEffect(() => {
     if (!containerRef.current) return;
     const script = document.createElement("script");
-    script.src = "https://widget.senja.io/widget/c60bf487-fbee-4c4c-b28d-d1212abef2e3/platform.js";
+    script.src = "https://widget.senja.io/widget/249bbaf1-cb7d-444b-a130-5f2f97ad7857/platform.js";
     script.type = "text/javascript";
     script.async = true;
     document.body.appendChild(script);
     return () => { try { document.body.removeChild(script); } catch(e) {} };
   }, []);
   return (
-    <section style={{ backgroundColor: WHITE, padding: "0 24px 32px", maxHeight: 412, overflow: "hidden" }}>
+    <section className="mobile-section" style={{ backgroundColor: WHITE, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+        <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}>Testimonials</p></FadeIn>
+        <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 800, margin: "0 auto 48px", textAlign: "center", color: NAVY }}>Some more <span style={{ fontWeight: 700, fontStyle: "italic" }}>love</span> for Tailwind 👇</h2></FadeIn>
         <div
           ref={containerRef}
           className="senja-embed"
-          data-id="c60bf487-fbee-4c4c-b28d-d1212abef2e3"
+          data-id="249bbaf1-cb7d-444b-a130-5f2f97ad7857"
           data-mode="shadow"
           data-lazyload="false"
           style={{ display: "block", width: "100%" }}
@@ -601,6 +610,7 @@ export default function TailwindStudio() {
         *{margin:0;padding:0;box-sizing:border-box}
         html{scroll-behavior:smooth}
         ::selection{background:${NAVY};color:${WHITE}}
+        @keyframes heroArrow{0%,100%{transform:translateY(0);opacity:0.4}50%{transform:translateY(8px);opacity:1}}
         @media(max-width:768px){
           .mobile-section{padding-top:56px!important;padding-bottom:56px!important}
           .mobile-section-why{padding-top:36px!important;padding-bottom:56px!important}
@@ -611,7 +621,7 @@ export default function TailwindStudio() {
           .hero-section{min-height:auto!important;padding-top:100px!important;padding-bottom:48px!important}
         }
       `}</style>
-      <Nav /><Hero /><SenjaCarousel /><WhySection /><WhatWeDo /><ProofSection /><AboutSection /><FooterCTA />
+      <Nav /><Hero /><WhySection /><WhatWeDo /><ProofSection /><WallOfLove /><FooterCTA />
     </div>
   );
 }
