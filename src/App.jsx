@@ -481,7 +481,7 @@ function ProofSection() {
     <section className="mobile-section" style={{ backgroundColor: WHITE, color: NAVY, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}><span style={{ background: "rgba(255,240,0,0.45)", padding: "3px 10px", borderRadius: 3, transform: "rotate(-0.5deg)", display: "inline-block" }}>Case study</span></p></FadeIn>
-        <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 680, margin: "0 auto 32px", textAlign: "center", color: NAVY }}>From inconsistent sends to <span style={{ fontWeight: 700 }}>10X newsletter revenue.</span></h2></FadeIn>
+        <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", maxWidth: 680, margin: "0 auto 32px", textAlign: "center", color: NAVY }}><span style={{ fontWeight: 700, color: GREEN }}>10xing email revenue</span> for Acquisition Ace</h2></FadeIn>
 
         <FadeIn delay={0.07}>
           <div style={{ maxWidth: 720, margin: "0 auto 36px", borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 24px rgba(15,23,41,0.10)" }}>
