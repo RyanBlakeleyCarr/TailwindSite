@@ -335,9 +335,12 @@ function WhySection() {
           <div style={{ maxWidth: 520 }}>
             <div ref={p1Ref} style={{ paddingTop: 24 }}>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 12, opacity: p1 ? 1 : 0, transform: p1 ? "translateY(0)" : "translateY(16px)", transition: ease() }}>
-                Every channel you're already investing in (YouTube, LinkedIn, ads, your podcast) should point to one place: an email list you own.
+                Every channel you're already investing in (YouTube, LinkedIn, ads, your podcast) should point to one place:
               </p>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 12, opacity: p1 ? 1 : 0, transform: p1 ? "translateY(0)" : "translateY(16px)", transition: ease(0.06) }}>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, fontWeight: 700, color: NAVY, marginBottom: 12, opacity: p1 ? 1 : 0, transform: p1 ? "translateY(0)" : "translateY(16px)", transition: ease(0.06) }}>
+                An email list you own.
+              </p>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 12, opacity: p1 ? 1 : 0, transform: p1 ? "translateY(0)" : "translateY(16px)", transition: ease(0.12) }}>
                 A view or a follow is value you're renting. An email subscriber is value you've <span style={{ textDecoration: "underline" }}>captured</span>, and you can reach them whenever you want.
               </p>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, fontWeight: 700, color: NAVY, marginBottom: 32, opacity: p1 ? 1 : 0, transform: p1 ? "translateY(0)" : "translateY(16px)", transition: ease(0.12) }}>
@@ -367,8 +370,11 @@ function WhySection() {
               <p style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(22px, 2.5vw, 28px)", lineHeight: 1.4, color: NAVY, marginBottom: 12, opacity: p4 ? 1 : 0, transform: p4 ? "translateY(0)" : "translateY(16px)", transition: ease() }}>
                 But that's just it… you have to execute well.
               </p>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 32, opacity: p4 ? 1 : 0, transform: p4 ? "translateY(0)" : "translateY(16px)", transition: ease(0.12) }}>
-                Managing three to four <em>good</em> sends a week means finding the right topics, writing something that people want to read, designing graphics, and running the platform ops behind each send, every week, forever. For an operator that already has a lot on their plate, it's impossible to manage.
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 12, opacity: p4 ? 1 : 0, transform: p4 ? "translateY(0)" : "translateY(16px)", transition: ease(0.12) }}>
+                Managing three to four <em>good</em> sends a week means finding the right topics, writing something that people want to read, designing graphics, and running the platform ops behind each send, every week, forever.
+              </p>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 32, opacity: p4 ? 1 : 0, transform: p4 ? "translateY(0)" : "translateY(16px)", transition: ease(0.24) }}>
+                For an operator that already has a lot on their plate, it's impossible to manage.
               </p>
             </div>
 
@@ -397,7 +403,7 @@ function WhatWeDo() {
     <section className="mobile-section" style={{ backgroundColor: WHITE, padding: "100px 24px", borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         <FadeIn><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: LIGHT_GRAY, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}>What we do</p></FadeIn>
-        <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, color: NAVY, letterSpacing: "-0.02em", maxWidth: 600, margin: "0 auto 56px", textAlign: "center" }}>Your partner across the <span style={{ fontWeight: 700 }}>entire funnel</span>: grow, nurture, convert.</h2></FadeIn>
+        <FadeIn delay={0.05}><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, color: NAVY, letterSpacing: "-0.02em", maxWidth: 600, margin: "0 auto 56px", textAlign: "center" }}>Your partner across the <span style={{ fontWeight: 700 }}>entire email funnel</span>.</h2></FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28 }}>
           {cards.map((card, i) => (
             <FadeIn key={i} delay={0.1 + i * 0.08}>
@@ -519,7 +525,7 @@ function ProofSection() {
 
           <Quote delay={0.45}>"You can get banned from Instagram, you get banned from YouTube. Guess what? If you have people's emails and they opted in, you own that."</Quote>
 
-          <FadeIn delay={0.5}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 24 }}>If that profile sounds like you, the case study is repeatable. It's the only kind of engagement we take.</p></FadeIn>
+          <FadeIn delay={0.5}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 24 }}>That's the value of a well-run newsletter, and <span style={{ fontWeight: 700, color: NAVY }}>we can build the same for you and your business.</span></p></FadeIn>
         </div>
 
         <div className="proof-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32, marginTop: 56 }}>
@@ -533,7 +539,7 @@ function ProofSection() {
           ))}
         </div>
 
-        <FadeIn delay={0.6}><div style={{ marginTop: 56, textAlign: "center" }}><a href="https://symkgiey390.typeform.com/tailwindstudio" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>See if we're a fit ✉️</a></div></FadeIn>
+        <FadeIn delay={0.6}><div style={{ marginTop: 56, textAlign: "center" }}><a href="https://symkgiey390.typeform.com/tailwindstudio" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>Reach out to the Tailwind team →</a></div></FadeIn>
       </div>
     </section>
   );
@@ -541,12 +547,12 @@ function ProofSection() {
 
 function FitSection() {
   const checkIcon = (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={NAVY} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 4 }}>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={GREEN} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 4 }}>
       <polyline points="20 6 9 17 4 12" />
     </svg>
   );
   const xIcon = (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={LIGHT_GRAY} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 4 }}>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c0392b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 4 }}>
       <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
     </svg>
   );
@@ -651,7 +657,7 @@ function FooterCTA() {
     <section className="mobile-section" style={{ backgroundColor: NAVY, color: WHITE, padding: "100px 24px", textAlign: "center" }}>
       <div style={{ maxWidth: 640, margin: "0 auto" }}>
         <FadeIn><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", marginBottom: 20, color: WHITE }}>Ready to make your list your best sales channel?</h2></FadeIn>
-        <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.6)", marginBottom: 36 }}>Tell us about your offer and where your audience lives today. We'll tell you honestly whether a newsletter will pay for itself, and walk away if it won't.</p></FadeIn>
+        <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.6)", marginBottom: 36 }}>Tell us about your business and where your audience lives today, and we'll give you an honest read on what a newsletter can do for you.</p></FadeIn>
         <FadeIn delay={0.2}><a href="https://symkgiey390.typeform.com/tailwindstudio" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: NAVY, backgroundColor: ACCENT, padding: "16px 40px", borderRadius: 6, textDecoration: "none", transition: "opacity 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.opacity = "0.9"} onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}>See if we're a fit 🤝</a></FadeIn>
         <FadeIn delay={0.3}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.25)", marginTop: 48 }}>© 2026 Tailwind Studio. tailwindstudio.co</p></FadeIn>
       </div>
