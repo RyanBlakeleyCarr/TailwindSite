@@ -149,22 +149,19 @@
   <p class="sub">What to write, killer first drafts, subject lines that get opened, emails that sound human, and lead magnets that grow your list. <b>Copy, paste, go.</b></p>
 
   <!--
-    EMAIL INTEGRATION: This form currently redirects to the Moodboard Beehiiv
-    subscribe page with the email prefilled, so it works with zero setup.
-    Your Beehiiv welcome automation should deliver the Notion link to the pack.
-
-    To capture emails directly on this page instead (no redirect):
-    1. In Beehiiv: Audience > Subscribe Forms > create/copy your embed form endpoint
-       (looks like https://embeds.beehiiv.com/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
-    2. Replace the handleSubscribe() function below with a fetch() POST to that
-       endpoint, then show the .success div.
+    EMAIL INTEGRATION: This form POSTs to /api/subscribe (a Vercel serverless
+    function in the site repo) which calls the Beehiiv API: subscribes the email
+    to Moodboard with no welcome email and enrolls it in the prompt-pack
+    delivery automation. Requires BEEHIIV_API_KEY set in Vercel env vars.
+    If the API call fails, the form falls back to redirecting to the
+    Beehiiv-hosted subscribe page with the email prefilled.
   -->
   <form id="subscribe-form" novalidate>
     <input type="email" id="email" placeholder="you@company.com" autocomplete="email" required>
     <button type="submit" id="btn">Send me the prompts &rarr;</button>
   </form>
   <div class="error" id="error">That email doesn't look right. Give it another shot.</div>
-  <p class="micro">You'll also get Moodboard, our (free) weekly newsletter where we share more AI workflows that will transform your business. Unsubscribe anytime.</p>
+  <p class="micro" id="micro">You'll also get Moodboard, our (free) weekly newsletter where we share more AI workflows that will transform your business. Unsubscribe anytime.</p>
   <div class="success" id="success"><b>You're in.</b> Check your inbox for the pack. If it's not there in a minute, peek at spam and drag us to primary.</div>
 
   <div class="inside">
@@ -199,14 +196,23 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
   }
 
-  function handleSubscribe(email) {
-    // Default: hand off to the Moodboard Beehiiv subscribe page with the
-    // email prefilled. Swap this for a direct embed-form POST if preferred
-    // (see the EMAIL INTEGRATION comment above the form).
-    const url = 'https://moodboard.beehiiv.com/subscribe?email='
-      + encodeURIComponent(email)
-      + '&utm_source=prompt-pack-landing&utm_medium=referral&utm_campaign=email-prompt-pack';
-    window.location.href = url;
+  async function handleSubscribe(email) {
+    try {
+      const r = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      if (!r.ok) throw new Error('subscribe failed');
+      form.style.display = 'none';
+      document.getElementById('micro').style.display = 'none';
+      successEl.style.display = 'block';
+    } catch (err) {
+      // Fallback: hand off to the Beehiiv-hosted subscribe page
+      window.location.href = 'https://moodboard.beehiiv.com/subscribe?email='
+        + encodeURIComponent(email)
+        + '&utm_source=prompt-pack-landing&utm_medium=referral&utm_campaign=email-prompt-pack';
+    }
   }
 
   form.addEventListener('submit', function (e) {
