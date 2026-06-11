@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Email Marketing Prompt Pack | Tailwind</title>
+<meta name="description" content="Five field-tested AI prompts that run your whole newsletter: ideas, drafting, subject lines, editing, and growth. Free from the Tailwind team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1729;
+    --green: #2d8f4e;
+    --green-hover: #257a42;
+    --orange: #d96310;
+    --gray: #555555;
+    --light-gray: #999999;
+    --border: #e5e5e5;
+    --subtle: #f9f9f9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #ffffff;
+    background-image:
+      radial-gradient(ellipse 90% 40% at 75% -10%, rgba(45,143,78,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 35% at 10% 110%, rgba(45,143,78,0.05) 0%, transparent 60%);
+    background-attachment: fixed;
+    color: var(--navy);
+    min-height: 100vh;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 56px 24px 64px; }
+
+  .brandline { display: flex; align-items: center; justify-content: center; gap: 7px; margin-bottom: 56px; opacity: 0; animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.05s forwards; }
+  .brandline img { width: 22px; height: 22px; object-fit: contain; }
+  .brandline span {
+    font-family: 'Merriweather', Georgia, serif; font-style: italic;
+    font-size: 19px; letter-spacing: -0.02em; color: var(--navy);
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--green);
+    text-align: center; margin-bottom: 22px;
+    opacity: 0; animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.15s forwards;
+  }
+  h1 {
+    font-family: 'Merriweather', Georgia, serif; font-weight: 400;
+    font-size: clamp(34px, 7vw, 52px); line-height: 1.14; letter-spacing: -0.02em;
+    text-align: center; margin-bottom: 20px; color: var(--navy);
+    opacity: 0; animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
+  }
+  h1 b { font-weight: 900; color: var(--green); }
+  .sub {
+    font-size: clamp(16px, 2.5vw, 18px); line-height: 1.65; color: var(--gray);
+    text-align: center; max-width: 520px; margin: 0 auto 36px;
+    opacity: 0; animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.35s forwards;
+  }
+  .sub b { color: var(--navy); }
+
+  form {
+    display: flex; gap: 10px; max-width: 480px; margin: 0 auto 14px;
+    opacity: 0; animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.45s forwards;
+  }
+  input[type="email"] {
+    flex: 1; min-width: 0;
+    font-family: 'DM Sans', sans-serif; font-size: 16px;
+    color: var(--navy); background: #fff;
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 15px 18px; outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  input[type="email"]::placeholder { color: var(--light-gray); }
+  input[type="email"]:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(45,143,78,0.12); }
+  button {
+    font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700;
+    color: #fff; background: var(--green);
+    border: none; border-radius: 8px; padding: 15px 26px;
+    cursor: pointer; white-space: nowrap;
+    transition: transform 0.15s, background 0.2s;
+  }
+  button:hover { background: var(--green-hover); transform: translateY(-1px); }
+  button:disabled { opacity: 0.6; cursor: default; transform: none; }
+  .micro {
+    font-size: 12.5px; color: var(--light-gray); text-align: center; max-width: 460px;
+    margin: 0 auto 56px; line-height: 1.6;
+    opacity: 0; animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
+  }
+  .error { color: var(--orange); font-size: 13.5px; text-align: center; margin: -4px 0 12px; display: none; }
+  .success {
+    display: none; text-align: center; max-width: 480px; margin: 0 auto 56px;
+    background: rgba(45,143,78,0.08); border: 1px solid rgba(45,143,78,0.35);
+    border-radius: 10px; padding: 22px 24px; font-size: 15.5px; line-height: 1.6; color: var(--gray);
+  }
+  .success b { color: var(--green); }
+
+  .inside {
+    border-top: 1px solid var(--border); padding-top: 40px;
+    opacity: 0; animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.6s forwards;
+  }
+  .inside-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-gray);
+    text-align: center; margin-bottom: 26px;
+  }
+  .item { display: flex; gap: 16px; align-items: flex-start; padding: 13px 0; }
+  .item .n {
+    font-family: 'Merriweather', Georgia, serif; font-weight: 900;
+    font-size: 17px; color: var(--green); min-width: 22px; padding-top: 1px;
+  }
+  .item .t { font-size: 15.5px; font-weight: 700; margin-bottom: 3px; color: var(--navy); }
+  .item .d { font-size: 14px; line-height: 1.55; color: var(--gray); }
+
+  .proof {
+    display: flex; justify-content: center; gap: 36px; flex-wrap: wrap;
+    border-top: 1px solid var(--border); margin-top: 36px; padding-top: 32px;
+    opacity: 0; animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.7s forwards;
+  }
+  .proof .stat { text-align: center; }
+  .proof .num { font-family: 'Merriweather', Georgia, serif; font-weight: 700; font-size: 21px; color: var(--navy); }
+  .proof .lbl { font-size: 12px; color: var(--light-gray); margin-top: 3px; }
+
+  footer {
+    text-align: center; margin-top: 56px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em;
+    color: var(--light-gray);
+    opacity: 0; animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.8s forwards;
+  }
+  footer a { color: var(--light-gray); text-decoration: none; }
+  footer a:hover { color: var(--navy); }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 520px) {
+    form { flex-direction: column; }
+    button { width: 100%; }
+    .proof { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brandline"><img src="/TailwindShip.png" alt="Tailwind"><span>Tailwind</span></div>
+
+  <div class="eyebrow">Free prompt pack</div>
+  <h1>Five prompts for <b>growing</b>, <b>nurturing</b>, and <b>monetizing</b> your email list</h1>
+  <p class="sub">What to write, killer first drafts, subject lines that get opened, emails that sound human, and lead magnets that grow your list. <b>Copy, paste, go.</b></p>
+
+  <!--
+    EMAIL INTEGRATION: This form currently redirects to the Moodboard Beehiiv
+    subscribe page with the email prefilled, so it works with zero setup.
+    Your Beehiiv welcome automation should deliver the Notion link to the pack.
+
+    To capture emails directly on this page instead (no redirect):
+    1. In Beehiiv: Audience > Subscribe Forms > create/copy your embed form endpoint
+       (looks like https://embeds.beehiiv.com/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    2. Replace the handleSubscribe() function below with a fetch() POST to that
+       endpoint, then show the .success div.
+  -->
+  <form id="subscribe-form" novalidate>
+    <input type="email" id="email" placeholder="you@company.com" autocomplete="email" required>
+    <button type="submit" id="btn">Send me the pack</button>
+  </form>
+  <div class="error" id="error">That email doesn't look right. Give it another shot.</div>
+  <p class="micro">You'll also get Moodboard, our (free) weekly newsletter where we share more AI workflows that will transform your business. Unsubscribe anytime.</p>
+  <div class="success" id="success"><b>You're in.</b> Check your inbox for the pack. If it's not there in a minute, peek at spam and drag us to primary.</div>
+
+  <div class="inside">
+    <div class="inside-label">What's inside</div>
+    <div class="item"><div class="n">1</div><div><div class="t">The Topic Bank Wizard</div><div class="d">Builds a bank of 20-25 topics your email list is already asking about. No more blank page.</div></div></div>
+    <div class="item"><div class="n">2</div><div><div class="t">The Newsletter Project Instructions</div><div class="d">Turn rough notes or a voice memo into a finished draft in your voice.</div></div></div>
+    <div class="item"><div class="n">3</div><div><div class="t">The Subject Line Generator</div><div class="d">8 subject lines from 8 psychological angles, generated from your finished email.</div></div></div>
+    <div class="item"><div class="n">4</div><div><div class="t">The AI-ism Elimination Add-on</div><div class="d">Humanizes any AI-assisted draft (no more, &ldquo;It's not x, it's y&rdquo; &#x1F644;).</div></div></div>
+    <div class="item"><div class="n">5</div><div><div class="t">The LinkedIn Comment-to-Get Generator</div><div class="d">Generate LinkedIn posts that drive email opt-ins (the same format that got our newsletter, Moodboard, its first 1,000 subscribers in 27 days).</div></div></div>
+  </div>
+
+  <div class="proof">
+    <div class="stat"><div class="num">1,000s</div><div class="lbl">of newsletters sent</div></div>
+    <div class="stat"><div class="num">30+</div><div class="lbl">publications produced</div></div>
+    <div class="stat"><div class="num">1.5M+</div><div class="lbl">subscribers earned</div></div>
+  </div>
+
+  <footer>
+    <a href="https://moodboard.beehiiv.com">moodboard.beehiiv.com</a> &nbsp;·&nbsp; <a href="https://tailwindstudio.co">tailwindstudio.co</a>
+  </footer>
+
+</div>
+
+<script>
+  const form = document.getElementById('subscribe-form');
+  const emailInput = document.getElementById('email');
+  const btn = document.getElementById('btn');
+  const errorEl = document.getElementById('error');
+  const successEl = document.getElementById('success');
+
+  function isValidEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+  }
+
+  function handleSubscribe(email) {
+    // Default: hand off to the Moodboard Beehiiv subscribe page with the
+    // email prefilled. Swap this for a direct embed-form POST if preferred
+    // (see the EMAIL INTEGRATION comment above the form).
+    const url = 'https://moodboard.beehiiv.com/subscribe?email='
+      + encodeURIComponent(email)
+      + '&utm_source=prompt-pack-landing&utm_medium=referral&utm_campaign=email-prompt-pack';
+    window.location.href = url;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const email = emailInput.value;
+    if (!isValidEmail(email)) {
+      errorEl.style.display = 'block';
+      emailInput.focus();
+      return;
+    }
+    errorEl.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    handleSubscribe(email.trim());
+  });
+</script>
+</body>
+</html>
