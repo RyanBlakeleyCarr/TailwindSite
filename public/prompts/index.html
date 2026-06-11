@@ -132,6 +132,43 @@
 
   @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
+  /* thank-you modal */
+  .modal-backdrop {
+    display: none; position: fixed; inset: 0; z-index: 50;
+    background: rgba(15,23,41,0.55);
+    align-items: center; justify-content: center; padding: 24px;
+  }
+  .modal-backdrop.open { display: flex; animation: fadeIn 0.25s ease forwards; }
+  .modal {
+    background: #fff; border-radius: 14px; max-width: 440px; width: 100%;
+    padding: 40px 36px 36px; text-align: center; position: relative;
+    box-shadow: 0 24px 64px rgba(15,23,41,0.25);
+    animation: modalRise 0.4s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+  .modal h2 {
+    font-family: 'Merriweather', Georgia, serif; font-weight: 400;
+    font-size: 28px; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 14px;
+  }
+  .modal h2 b { font-weight: 900; color: var(--green); }
+  .modal p { font-size: 15px; line-height: 1.7; color: var(--gray); margin-bottom: 24px; }
+  .modal p b { color: var(--navy); }
+  .modal .archive-btn {
+    display: inline-block; font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 700; color: #fff; background: var(--green);
+    border-radius: 8px; padding: 13px 24px; text-decoration: none;
+    transition: transform 0.15s, background 0.2s;
+  }
+  .modal .archive-btn:hover { background: var(--green-hover); transform: translateY(-1px); }
+  .modal .close {
+    position: absolute; top: 14px; right: 16px;
+    background: none; border: none; padding: 6px; cursor: pointer;
+    font-size: 18px; line-height: 1; color: var(--light-gray);
+    transition: color 0.15s; width: auto;
+  }
+  .modal .close:hover { color: var(--navy); background: none; transform: none; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes modalRise { from { opacity: 0; transform: translateY(24px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
   @media (max-width: 520px) {
     form { flex-direction: column; }
     button { width: 100%; }
@@ -185,6 +222,15 @@
 
 </div>
 
+<div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="close" id="modal-close" aria-label="Close">&#10005;</button>
+    <h2 id="modal-title"><b>Thank you!</b></h2>
+    <p>The prompt pack will hit your inbox <b>in the next five minutes.</b> In the meantime, you can find more prompts and workflows in past editions of our newsletter, Moodboard.</p>
+    <a class="archive-btn" href="https://moodboard.beehiiv.com" target="_blank" rel="noopener">Check out the Moodboard archive &rarr;</a>
+  </div>
+</div>
+
 <script>
   const form = document.getElementById('subscribe-form');
   const emailInput = document.getElementById('email');
@@ -207,6 +253,7 @@
       form.style.display = 'none';
       document.getElementById('micro').style.display = 'none';
       successEl.style.display = 'block';
+      showThankYou();
     } catch (err) {
       // Fallback: hand off to the Beehiiv-hosted subscribe page
       window.location.href = 'https://moodboard.beehiiv.com/subscribe?email='
@@ -214,6 +261,13 @@
         + '&utm_source=prompt-pack-landing&utm_medium=referral&utm_campaign=email-prompt-pack';
     }
   }
+
+  const backdrop = document.getElementById('modal-backdrop');
+  function showThankYou() { backdrop.classList.add('open'); }
+  function hideThankYou() { backdrop.classList.remove('open'); }
+  document.getElementById('modal-close').addEventListener('click', hideThankYou);
+  backdrop.addEventListener('click', function (e) { if (e.target === backdrop) hideThankYou(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hideThankYou(); });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
