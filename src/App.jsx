@@ -665,6 +665,14 @@ function FooterCTA() {
   );
 }
 
+function AnnouncementBar() {
+  return (
+    <a href="/prompts" style={{ display: "block", backgroundColor: NAVY, color: WHITE, textAlign: "center", padding: "11px 16px", fontFamily: "'DM Sans', sans-serif", fontSize: 14, lineHeight: 1.45, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>
+      <span style={{ fontWeight: 700, color: ACCENT }}>Free prompt pack:</span> 5 prompts for growing, nurturing, and monetizing your email list <span style={{ fontWeight: 700, color: ACCENT }}>→</span>
+    </a>
+  );
+}
+
 export default function TailwindStudio() {
   return (
     <div style={{ margin: 0, padding: 0, backgroundColor: WHITE, overflowX: "hidden" }}>
@@ -687,7 +695,7 @@ export default function TailwindStudio() {
           .hero-inner{padding-top:56px!important;padding-bottom:48px!important}
         }
       `}</style>
-      <Hero /><WhySection /><WhatWeDo /><ProofSection /><FitSection /><WallOfLove /><FooterCTA />
+      <AnnouncementBar /><Hero /><WhySection /><WhatWeDo /><ProofSection /><FitSection /><WallOfLove /><FooterCTA />
     </div>
   );
 }
