@@ -49,12 +49,13 @@
     font-family: 'Merriweather', Georgia, serif; font-weight: 400;
     font-size: clamp(34px, 7vw, 52px); line-height: 1.14; letter-spacing: -0.02em;
     text-align: center; margin-bottom: 20px; color: var(--navy);
+    margin-left: -60px; margin-right: -60px;
     opacity: 0; animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
   }
   h1 b { font-weight: 900; color: var(--green); }
   .sub {
-    font-size: clamp(16px, 2.5vw, 18px); line-height: 1.65; color: var(--gray);
-    text-align: center; max-width: 520px; margin: 0 auto 36px;
+    font-size: clamp(16px, 2.5vw, 17px); line-height: 1.65; color: var(--gray);
+    text-align: center; max-width: 640px; margin: 0 auto 36px;
     opacity: 0; animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.35s forwards;
   }
   .sub b { color: var(--navy); }
@@ -169,6 +170,9 @@
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   @keyframes modalRise { from { opacity: 0; transform: translateY(24px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
+  @media (max-width: 760px) {
+    h1 { margin-left: 0; margin-right: 0; }
+  }
   @media (max-width: 520px) {
     form { flex-direction: column; }
     button { width: 100%; }
@@ -182,7 +186,7 @@
   <a class="brandline" href="https://tailwindstudio.co"><img src="/TailwindShip.png" alt="Tailwind"><span>Tailwind</span></a>
 
   <div class="eyebrow">Free prompt pack</div>
-  <h1>Five prompts for <b>growing</b>, <b>engaging</b>, and <b>monetizing</b> your email list</h1>
+  <h1>Five prompts for <b>growing</b>, <b>engaging</b>, and <b>monetizing</b> your email&nbsp;list</h1>
   <p class="sub">What to write, killer first drafts, subject lines that get opened, emails that sound human, and lead magnets that grow your list. <b>Copy, paste, go.</b></p>
 
   <!--
