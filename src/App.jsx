@@ -52,6 +52,13 @@ function Hero() {
         </FadeIn>
         <FadeIn delay={0.05}><h1 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(40px, 6vw, 72px)", fontWeight: 400, lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 1000, marginBottom: 28, color: NAVY, marginLeft: "auto", marginRight: "auto" }}>We build newsletters that <span style={{ fontWeight: 700, color: GREEN }}>maximize sales</span> from your email list.</h1></FadeIn>
         <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, color: GRAY_TEXT, maxWidth: 720, marginBottom: 40, marginLeft: "auto", marginRight: "auto" }}><span style={{ fontWeight: 700 }}>Engage your audience</span> with world-class emails, <span style={{ fontWeight: 700 }}>convert them to your products and services</span>, and let <span style={{ fontWeight: 700, fontStyle: "italic" }}>the most experienced team in the newsletter game</span> manage every step.</p></FadeIn>
+        <FadeIn delay={0.15}>
+          <div style={{ maxWidth: 760, margin: "0 auto 40px", borderRadius: 12, overflow: "hidden", boxShadow: "0 24px 64px rgba(11, 31, 59, 0.18)" }}>
+            <div style={{ padding: "75% 0 0 0", position: "relative" }}>
+              <iframe src="https://player.vimeo.com/video/1212179915?badge=0&autopause=0&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="What is Tailwind?" />
+            </div>
+          </div>
+        </FadeIn>
         <FadeIn delay={0.2}><a href="https://symkgiey390.typeform.com/tailwindstudio" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>Reach out to the Tailwind team →</a></FadeIn>
         <FadeIn delay={0.35}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, lineHeight: 1.7, color: LIGHT_GRAY, marginTop: 32, maxWidth: 540, marginLeft: "auto", marginRight: "auto" }}>30+ publications produced, 1.5M+ subscribers earned, 8-figures in client revenue generated.</p></FadeIn>
         <FadeIn delay={0.5}>
