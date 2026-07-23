@@ -59,7 +59,7 @@ function Hero() {
             </div>
           </div>
         </FadeIn>
-        <FadeIn delay={0.2}><a href="https://symkgiey390.typeform.com/tailwindstudio" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>Reach out to the Tailwind team →</a></FadeIn>
+        <FadeIn delay={0.2}><a href="https://calendly.com/blakeley-digital/tailwind-learn-more" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>Book a call →</a></FadeIn>
         <FadeIn delay={0.35}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, lineHeight: 1.7, color: LIGHT_GRAY, marginTop: 32, maxWidth: 540, marginLeft: "auto", marginRight: "auto" }}>30+ publications produced, 1.5M+ subscribers earned, 8-figures in client revenue generated.</p></FadeIn>
         <FadeIn delay={0.5}>
           <div style={{ marginTop: 32 }}>
@@ -546,7 +546,7 @@ function ProofSection() {
           ))}
         </div>
 
-        <FadeIn delay={0.6}><div style={{ marginTop: 56, textAlign: "center" }}><a href="https://symkgiey390.typeform.com/tailwindstudio" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>Reach out to the Tailwind team →</a></div></FadeIn>
+        <FadeIn delay={0.6}><div style={{ marginTop: 56, textAlign: "center" }}><a href="https://calendly.com/blakeley-digital/tailwind-learn-more" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: WHITE, backgroundColor: NAVY, padding: "14px 32px", borderRadius: 6, textDecoration: "none", transition: "background-color 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = ACCENT_HOVER} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = NAVY}>Book a call →</a></div></FadeIn>
       </div>
     </section>
   );
@@ -665,7 +665,7 @@ function FooterCTA() {
       <div style={{ maxWidth: 640, margin: "0 auto" }}>
         <FadeIn><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", marginBottom: 20, color: WHITE }}>Ready to make your list your best sales channel?</h2></FadeIn>
         <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.6)", marginBottom: 36 }}>Tell us about your business and where your audience lives today, and we'll give you an honest read on what a newsletter can do for you.</p></FadeIn>
-        <FadeIn delay={0.2}><a href="https://symkgiey390.typeform.com/tailwindstudio" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: NAVY, backgroundColor: ACCENT, padding: "16px 40px", borderRadius: 6, textDecoration: "none", transition: "opacity 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.opacity = "0.9"} onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}>See if we're a fit 🤝</a></FadeIn>
+        <FadeIn delay={0.2}><a href="https://calendly.com/blakeley-digital/tailwind-learn-more" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: NAVY, backgroundColor: ACCENT, padding: "16px 40px", borderRadius: 6, textDecoration: "none", transition: "opacity 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.opacity = "0.9"} onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}>Book a call 🤝</a></FadeIn>
         <FadeIn delay={0.3}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.25)", marginTop: 48 }}>© 2026 Tailwind Studio. tailwindstudio.co</p></FadeIn>
       </div>
     </section>
