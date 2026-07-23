@@ -54,7 +54,7 @@ function Hero() {
         <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, color: GRAY_TEXT, maxWidth: 720, marginBottom: 40, marginLeft: "auto", marginRight: "auto" }}><span style={{ fontWeight: 700 }}>Engage your audience</span> with world-class emails, <span style={{ fontWeight: 700 }}>convert them to your products and services</span>, and let <span style={{ fontWeight: 700, fontStyle: "italic" }}>the most experienced team in the newsletter game</span> manage every step.</p></FadeIn>
         <FadeIn delay={0.15}>
           <div style={{ maxWidth: 760, margin: "0 auto 40px", borderRadius: 12, overflow: "hidden", boxShadow: "0 24px 64px rgba(11, 31, 59, 0.18)" }}>
-            <div style={{ padding: "75% 0 0 0", position: "relative" }}>
+            <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
               <iframe src="https://player.vimeo.com/video/1212179915?badge=0&autopause=0&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="What is Tailwind?" />
             </div>
           </div>
