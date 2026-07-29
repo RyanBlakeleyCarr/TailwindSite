@@ -50,7 +50,7 @@ function Hero() {
             <span style={{ fontFamily: "'Merriweather', Georgia, serif", fontWeight: 400, fontStyle: "italic", fontSize: 22, color: NAVY, letterSpacing: "-0.02em" }}>Tailwind</span>
           </div>
         </FadeIn>
-        <FadeIn delay={0.05}><h1 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(40px, 6vw, 72px)", fontWeight: 400, lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 1000, marginBottom: 28, color: NAVY, marginLeft: "auto", marginRight: "auto" }}>We <span style={{ fontWeight: 700 }}>build and grow</span> newsletters that turn your audience into <span style={{ fontWeight: 700, color: GREEN }}>high-ticket buyers</span>.</h1></FadeIn>
+        <FadeIn delay={0.05}><h1 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(36px, 4.3vw, 54px)", fontWeight: 400, lineHeight: 1.12, letterSpacing: "-0.025em", maxWidth: 1080, marginBottom: 28, color: NAVY, marginLeft: "auto", marginRight: "auto" }}>We <span style={{ fontWeight: 700 }}>build and grow</span> newsletters that turn<br className="hero-br" /> your audience into <span style={{ fontWeight: 700, color: GREEN }}>high-ticket buyers</span>.</h1></FadeIn>
         <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, color: GRAY_TEXT, maxWidth: 720, marginBottom: 40, marginLeft: "auto", marginRight: "auto" }}><span style={{ fontWeight: 700 }}>Engage your audience</span> with world-class emails, <span style={{ fontWeight: 700 }}>convert them to your products and services</span>, and let <span style={{ fontWeight: 700, fontStyle: "italic" }}>the most experienced team in the newsletter game</span> manage every step.</p></FadeIn>
         <FadeIn delay={0.15}>
           <div style={{ maxWidth: 760, margin: "0 auto 40px", borderRadius: 12, overflow: "hidden", boxShadow: "0 24px 64px rgba(11, 31, 59, 0.18)" }}>
@@ -698,6 +698,7 @@ export default function TailwindStudio() {
           .proof-stats{grid-template-columns:1fr!important;gap:24px!important}
           .about-grid{grid-template-columns:1fr!important;gap:32px!important}
           .about-photo{aspect-ratio:3/2!important}
+          .hero-br{display:none}
           .hero-section{min-height:auto!important;padding-top:0px!important;padding-bottom:48px!important}
           .hero-inner{padding-top:56px!important;padding-bottom:48px!important}
         }
