@@ -57,7 +57,7 @@ function Hero() {
           </div>
         </FadeIn>
         <FadeIn delay={0.05}><h1 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(36px, 4.3vw, 54px)", fontWeight: 400, lineHeight: 1.12, letterSpacing: "-0.025em", maxWidth: 1080, marginBottom: 28, color: NAVY, marginLeft: "auto", marginRight: "auto" }}>We <span style={{ fontWeight: 700 }}>build and grow</span> newsletters that turn<br className="hero-br" /> readers into <span style={{ fontWeight: 700, color: GREEN }}>agency clients</span>.</h1></FadeIn>
-        <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, color: GRAY_TEXT, maxWidth: 960, marginBottom: 40, marginLeft: "auto", marginRight: "auto" }}><span style={{ fontWeight: 700 }}>Engage your audience</span> with world-class emails, <span style={{ fontWeight: 700 }}>convert them to your products and services</span>, and let<br className="sub-br" /> <span style={{ fontWeight: 700, fontStyle: "italic" }}>the most experienced team in the newsletter game</span> manage every step.</p></FadeIn>
+        <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, color: GRAY_TEXT, maxWidth: 960, marginBottom: 40, marginLeft: "auto", marginRight: "auto" }}><span style={{ fontWeight: 700 }}>Engage your audience</span> with world-class emails, <span style={{ fontWeight: 700 }}>convert them into booked sales calls</span>, and let<br className="sub-br" /> <span style={{ fontWeight: 700, fontStyle: "italic" }}>the most experienced team in the newsletter game</span> manage every step.</p></FadeIn>
         <FadeIn delay={0.15}>
           <div style={{ maxWidth: 760, margin: "0 auto 40px", borderRadius: 12, overflow: "hidden", boxShadow: "0 24px 64px rgba(11, 31, 59, 0.18)" }}>
             <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
@@ -348,7 +348,7 @@ function WhySection() {
           <div style={{ maxWidth: 520 }}>
             <div ref={p1Ref} style={{ paddingTop: 24 }}>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 12, opacity: p1 ? 1 : 0, transform: p1 ? "translateY(0)" : "translateY(16px)", transition: ease() }}>
-                Every channel you're already investing in (YouTube, LinkedIn, ads, your podcast) should point to one place:
+                Every channel you're already investing in (LinkedIn, YouTube, ads, your podcast) should point to one place:
               </p>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, fontWeight: 700, color: NAVY, marginBottom: 12, opacity: p1 ? 1 : 0, transform: p1 ? "translateY(0)" : "translateY(16px)", transition: ease(0.06) }}>
                 An email list you own.
@@ -372,7 +372,7 @@ function WhySection() {
                 When you sell something that's a serious investment, people rarely buy after one ad or piece of content. They buy after weeks of consistent proof of expertise and trust-building.
               </p>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 12, opacity: p3 ? 1 : 0, transform: p3 ? "translateY(0)" : "translateY(16px)", transition: ease(0.12) }}>
-                A newsletter delivers content that converts in an engaging, value-first medium. Pair it with thoughtful segmentation and sales automation, and you have a machine that moves potential customers down your funnel in a natural, coherent, effective journey.
+                A newsletter delivers content that converts in an engaging, value-first medium. Pair it with thoughtful segmentation and sales automation, and you have a machine that moves potential clients down your funnel in a natural, coherent, effective journey.
               </p>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, fontWeight: 700, color: NAVY, marginBottom: 32, opacity: p3 ? 1 : 0, transform: p3 ? "translateY(0)" : "translateY(16px)", transition: ease(0.24) }}>
                 Executed well, your newsletter will become the highest-revenue channel you operate.
@@ -387,7 +387,7 @@ function WhySection() {
                 Managing three to four <em>good</em> sends a week means finding the right topics, writing something that people want to read, designing graphics, and running the platform ops behind each send, every week, forever.
               </p>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, lineHeight: 1.8, color: GRAY_TEXT, marginBottom: 32, opacity: p4 ? 1 : 0, transform: p4 ? "translateY(0)" : "translateY(16px)", transition: ease(0.24) }}>
-                For an operator that already has a lot on their plate, it's impossible to manage.
+                For an agency owner juggling client delivery, it's impossible to manage.
               </p>
             </div>
 
@@ -570,9 +570,9 @@ function FitSection() {
     </svg>
   );
   const fitItems = [
-    <>You're selling a high-ticket offer (coaching, courses, services, or community) with a proven track record of converting.</>,
+    <>You're selling retainers or high-ticket engagements with a proven track record of converting.</>,
     <>You're already investing effort in at least one top-of-funnel channel: YouTube, LinkedIn, Instagram, or a podcast (or you're willing to invest additional budget into paid ads)</>,
-    <>You're an owner or marketing lead who wants email managed by a team of experts (you're not looking for another channel to babysit)</>,
+    <>You're an agency owner or marketing lead who wants email managed by a team of experts (you're not looking for another channel to babysit)</>,
   ];
   const notFitItems = [
     <>You haven't figured out how you'll monetize your email list yet.</>,
@@ -669,8 +669,8 @@ function FooterCTA() {
   return (
     <section className="mobile-section" style={{ backgroundColor: NAVY, color: WHITE, padding: "100px 24px", textAlign: "center" }}>
       <div style={{ maxWidth: 640, margin: "0 auto" }}>
-        <FadeIn><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", marginBottom: 20, color: WHITE }}>Ready to make your list your best sales channel?</h2></FadeIn>
-        <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.6)", marginBottom: 36 }}>Tell us about your business and where your audience lives today, and we'll give you an honest read on what a newsletter can do for you.</p></FadeIn>
+        <FadeIn><h2 style={{ fontFamily: "'Merriweather', Georgia, serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, letterSpacing: "-0.02em", marginBottom: 20, color: WHITE }}>Ready to make your list your best client-acquisition channel?</h2></FadeIn>
+        <FadeIn delay={0.1}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.6)", marginBottom: 36 }}>Tell us about your agency and where your audience lives today, and we'll give you an honest read on what a newsletter can do for you.</p></FadeIn>
         <FadeIn delay={0.2}><a href={calendlyHref()} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", fontFamily: "'DM Sans', sans-serif", fontSize: 16, fontWeight: 600, color: NAVY, backgroundColor: ACCENT, padding: "16px 40px", borderRadius: 6, textDecoration: "none", transition: "opacity 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.opacity = "0.9"} onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}>Book a call 🤝</a></FadeIn>
         <FadeIn delay={0.3}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.25)", marginTop: 48 }}>© 2026 Tailwind Studio. tailwindstudio.co</p></FadeIn>
       </div>
